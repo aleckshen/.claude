@@ -230,4 +230,4 @@ TRUNCATE TABLE footprint.Facility;
 - No filler phrases or unnecessary pleasantries
 - Caveats noted with "Note that..." if applicable
 
-See [examples.md](examples.md) for full examples of Feature PRs, Bug Fix PRs, Small Fix PRs, and Tooling/Config PRs. Read this file when you need to calibrate tone and style.
+See [examples.md](references/examples.md) for full examples of Feature PRs, Bug Fix PRs, Small Fix PRs, and Tooling/Config PRs. Read this file when you need to calibrate tone and style.
