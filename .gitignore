@@ -1,0 +1,18 @@
+# Ignore everything by default
+*
+
+# Whitelist directories
+!agents/
+!agents/**
+!commands/
+!commands/**
+!skills/
+!skills/**
+!plugins/
+!plugins/installed_plugins.json
+
+# Whitelist root config files
+!CLAUDE.md
+!settings.json
+!.gitignore
+!README.md
