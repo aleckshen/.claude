@@ -83,7 +83,7 @@ No issues found.
 
 <If issues exist, list each one as:>
 
-#### <issue number>. <short title>
+#### <issue number> <short title>
 
 - **Severity**: HIGH | MEDIUM | LOW
 - **File**: `<file-path>:<line-number or range>`
