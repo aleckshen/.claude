@@ -8,6 +8,8 @@
 !commands/**
 !skills/
 !skills/**
+!hooks/
+!hooks/**
 !plugins/
 !plugins/installed_plugins.json
 

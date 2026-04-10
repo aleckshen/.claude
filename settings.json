@@ -73,5 +73,9 @@
   "effortLevel": "high",
   "autoUpdatesChannel": "latest",
   "skipDangerousModePermissionPrompt": true,
-  "model": "opus"
+  "model": "opus",
+  "statusLine": {
+    "type": "command",
+    "command": "node /Users/aleckshen/.claude/hooks/statusline.js"
+  }
 }

@@ -10,6 +10,7 @@ This repository contains my personal configuration for [Claude Code](https://doc
 ├── agents/         # Custom sub-agent definitions (.md files)
 ├── commands/       # Custom slash commands (.md files)
 ├── skills/         # Reusable skill packages (folders with SKILL.md)
+├── hooks/          # Custom hook scripts (statusline, etc.)
 └── plugins/        # Plugin registry and cached data
 ```
 
@@ -17,6 +18,7 @@ This repository contains my personal configuration for [Claude Code](https://doc
 - **`agents/`** — Each `.md` file defines a sub-agent with its own system prompt, tool access, and model. Agents are spawned by Claude Code to handle specialized tasks autonomously.
 - **`commands/`** — Each `.md` file becomes a `/slash-command`. The filename is the command name (e.g., `review.md` → `/review`). Commands typically delegate to an agent or provide a prompt template.
 - **`skills/`** — Each subfolder is a skill package containing a `SKILL.md` and optional `references/` or `scripts/` directories. Skills give Claude domain-specific knowledge and workflows that activate based on context.
+- **`hooks/`** — Custom scripts used by Claude Code hooks and the statusline. Currently contains `statusline.js`, which renders the status bar (directory, branch, context usage, model).
 - **`plugins/`** — Managed by the plugin system. `installed_plugins.json` tracks installed plugins; other contents are auto-generated.
 
 > Directories like `sessions/`, `cache/`, `file-history/`, and `projects/` are generated at runtime and excluded via `.gitignore`.
