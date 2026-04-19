@@ -70,12 +70,11 @@
       "Bash(git pull:*)"
     ]
   },
-  "effortLevel": "high",
-  "autoUpdatesChannel": "latest",
-  "skipDangerousModePermissionPrompt": true,
-  "model": "opus",
   "statusLine": {
     "type": "command",
-    "command": "node /Users/aleckshen/.claude/hooks/statusline.js"
-  }
+    "command": "bash /Users/aleckshen/.claude/hooks/statusline.sh"
+  },
+  "effortLevel": "medium",
+  "autoUpdatesChannel": "latest",
+  "skipDangerousModePermissionPrompt": true
 }
