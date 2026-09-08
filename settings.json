@@ -87,7 +87,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "afplay /System/Library/Sounds/Ping.aiff",
+            "command": "jq -e '.message | test(\"permission\"; \"i\")' >/dev/null 2>&1 && afplay /System/Library/Sounds/Ping.aiff || true",
             "async": true
           }
         ]
