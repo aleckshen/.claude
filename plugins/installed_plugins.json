@@ -1,4 +1,23 @@
 {
   "version": 2,
-  "plugins": {}
+  "plugins": {
+    "typescript-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/aleckshen/.claude/plugins/cache/claude-plugins-official/typescript-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-09-08T05:23:46.635Z",
+        "lastUpdated": "2026-09-08T05:23:46.635Z"
+      }
+    ],
+    "pyright-lsp@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/aleckshen/.claude/plugins/cache/claude-plugins-official/pyright-lsp/1.0.0",
+        "version": "1.0.0",
+        "installedAt": "2026-09-08T05:23:51.646Z",
+        "lastUpdated": "2026-09-08T05:23:51.646Z"
+      }
+    ]
+  }
 }
