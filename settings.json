@@ -55,8 +55,7 @@
     ],
     "deny": [
       "Read(**/.env*)",
-      "Edit(**/.env*)",
-      "Write(**/.env*)"
+      "Edit(**/.env*)"
     ],
     "ask": [
       "Bash(rm:*)",
@@ -70,11 +69,37 @@
       "Bash(git pull:*)"
     ]
   },
+  "hooks": {
+    "Notification": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Ping.aiff",
+            "async": true
+          }
+        ]
+      }
+    ],
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "afplay /System/Library/Sounds/Funk.aiff",
+            "async": true
+          }
+        ]
+      }
+    ]
+  },
+  "model": "sonnet",
   "statusLine": {
     "type": "command",
     "command": "bash /Users/aleckshen/.claude/hooks/statusline.sh"
   },
-  "effortLevel": "medium",
+  "effortLevel": "high",
   "autoUpdatesChannel": "latest",
+  "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true
 }
