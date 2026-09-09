@@ -18,6 +18,15 @@
         "installedAt": "2026-09-08T05:23:51.646Z",
         "lastUpdated": "2026-09-08T05:23:51.646Z"
       }
+    ],
+    "frontend-design@claude-plugins-official": [
+      {
+        "scope": "user",
+        "installPath": "/Users/aleckshen/.claude/plugins/cache/claude-plugins-official/frontend-design/517b2fcd1b60",
+        "version": "517b2fcd1b60",
+        "installedAt": "2026-09-09T10:56:04.302Z",
+        "lastUpdated": "2026-09-09T10:56:04.302Z"
+      }
     ]
   }
 }
