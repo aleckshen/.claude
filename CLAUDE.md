@@ -43,7 +43,17 @@ When your changes create orphans:
 
 The test: Every changed line should trace directly to the user's request.
 
-## 4. Goal-Driven Execution
+## 4. Minimal Comments
+
+**Comments explain why, not what.**
+
+- Default to no comments. Well-named code already says what it does.
+- Only add a comment for a hidden constraint, a non-obvious invariant, or a workaround that would confuse a reader without it.
+- Never restate the line below it (`// increment counter` above `counter++`).
+- Never add a docstring/comment block just because a function exists — only when the *why* isn't obvious from the signature and body.
+- Match the file's existing comment density; don't introduce a new style.
+
+## 5. Goal-Driven Execution
 
 **Define success criteria. Loop until verified.**
 
