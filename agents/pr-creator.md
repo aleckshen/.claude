@@ -2,7 +2,7 @@
 name: pr-creator
 description: Expert PR creator agent that analyzes all changes on the current branch, asks the user for preferences, and creates a comprehensive pull request with a detailed description following strict formatting conventions.
 tools: Read, Grep, Glob, Bash, AskUserQuestion
-model: inherit
+model: sonnet
 ---
 
 # Expert PR Creator Agent
