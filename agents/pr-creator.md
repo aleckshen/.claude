@@ -45,7 +45,7 @@ Ask how they want to handle the PR title:
 Read the PR description style guide and examples:
 
 - `/Users/aleckshen/.claude/skills/pr-description/SKILL.md` — formatting rules, voice, tone, structure
-- `/Users/aleckshen/.claude/skills/pr-description/examples.md` — real examples to calibrate tone
+- `/Users/aleckshen/.claude/skills/pr-description/references/examples.md` — real examples to calibrate tone; the "Template PR" example is the shape to match when the repo has a PR template
 
 These contain the exact formatting rules for PR descriptions. You MUST follow them precisely.
 
@@ -101,9 +101,13 @@ Follow the SKILL.md style guide EXACTLY:
 4. **How to test this change**: Specific, actionable steps with commands, URLs/routes, and expected behavior. Include "I would recommend..." for helpful tips. Include code snippets when relevant.
 5. **Caveats**: Use "Note that..." for important caveats. Use `> [!WARNING]` or `> [!NOTE]` GitHub alerts for critical information.
 
-If a PR template was found in Step 4, fill in the template instead of using the fallback structure. Adapt the style guide's voice rules to fit within the template's sections. **Do NOT add any sections that are not present in the template** — not even "How to test this change" or "Caveats".
+If a PR template was found in Step 4, fill in the template instead of using the fallback structure, following "Shape of the Description Section (With a Template)" in SKILL.md: one opening sentence, one flat bullet list with no `###` subheadings, one short "Note that" paragraph, the ticket reference, then the template's sections with nothing after them. In that case point 2's subheadings, point 4's testing section and point 5's GitHub alerts do not apply. **Do NOT add any sections that are not present in the template**, not even "How to test this change", "Caveats" or a verification summary. Leave author attestation checkboxes (e.g. "I personally reviewed and understood the code") unticked.
 
 ### Step 7: Create the PR
+
+If the branch already has an open PR (check with `gh pr view --json number,url,baseRefName`, e.g. one opened by `gh stack submit`), update it instead of creating a new one: `gh pr edit <number> --title "<title>" --body-file <file>`. Keep its base branch and draft state, and don't push.
+
+Otherwise:
 
 1. Push the branch if needed:
 

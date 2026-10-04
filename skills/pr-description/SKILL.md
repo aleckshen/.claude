@@ -45,6 +45,22 @@ Checkbox preservation is critical. Unchecked boxes must appear as `- [ ]` and ch
 
 **No template found** → Use the default structure in "Structure Template (Fallback)" below.
 
+## Shape of the Description Section (With a Template)
+
+Keep the `# Description` section short. A reviewer reads it in seconds and gets the detail from the diff. See the "Template PR" example in [examples.md](references/examples.md), which is the shape to match.
+
+1. **One opening sentence**: "This PR {verb}s {what}", saying what the user or reviewer gets, not how it is built.
+2. **One flat bullet list**, one bullet per logical piece of the change (roughly one per commit), usually 3-7 bullets:
+   - no `###` subheadings, no nested bullets
+   - name the files or components a reviewer will look for, but leave out implementation detail (cache tags, `select`/`populate` fields, internal helper names); that belongs in the diff
+   - put the test count in one bullet ("adds 39 vitest tests"), never a separate verification paragraph
+3. **One "Note that" paragraph** of one or two sentences, holding only what a reviewer must know: known limitations, things that look broken but aren't yet (e.g. a link to a page that doesn't exist), and the one setup command they need (e.g. "Run `pnpm db:seed` to get the sample data."). Leave out design rationale, pre-existing bugs and anything already agreed with the team.
+4. **The ticket reference** (`Closes #XXX`) on its own line.
+
+Then the rest of the template, filled in, with **nothing after its last section**: no "How to test", reviewer steps, verification summary or extra notes.
+
+Never tick a checkbox that is the author's own statement, such as "I personally reviewed and understood the code". Leave it for the author.
+
 ## Structure Template (Fallback — No Template Found)
 
 ```markdown
