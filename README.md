@@ -11,8 +11,7 @@ This repository contains my personal configuration for [Claude Code](https://doc
 ├── agents/         # Custom sub-agent definitions (.md files)
 ├── commands/       # Custom slash commands (.md files)
 ├── skills/         # Reusable skill packages (folders with SKILL.md)
-├── hooks/          # Custom hook scripts (statusline, etc.)
-└── plugins/        # Plugin registry and cached data
+└── hooks/          # Custom hook scripts (statusline, etc.)
 ```
 
 - **`CLAUDE.md`** — User-level memory. Behavioural guidelines (think before coding, keep changes surgical, favour simplicity) that Claude loads automatically in every project, merged with any project-specific `CLAUDE.md`.
@@ -21,9 +20,8 @@ This repository contains my personal configuration for [Claude Code](https://doc
 - **`commands/`** — Each `.md` file becomes a `/slash-command`. The filename is the command name (e.g., `review.md` → `/review`). Commands typically delegate to an agent or provide a prompt template.
 - **`skills/`** — Each subfolder is a skill package containing a `SKILL.md` and optional `references/` or `scripts/` directories. Skills give Claude domain-specific knowledge and workflows that activate based on context.
 - **`hooks/`** — Scripts invoked by Claude Code hooks. Contains `statusline.sh`, which renders the status bar (directory, git branch, context usage, rate-limit usage, model, vim mode). Other hooks are defined inline in `settings.json` (see below).
-- **`plugins/`** — Managed by the plugin system. `installed_plugins.json` tracks install metadata; enabled plugins are declared in `settings.json` under `enabledPlugins`. The `cache/`, `marketplaces/`, and `data/` contents are auto-generated and git-ignored.
 
-> Directories like `sessions/`, `cache/`, `file-history/`, and `projects/` are generated at runtime and excluded via `.gitignore`.
+> Directories like `plugins/`, `sessions/`, `cache/`, `file-history/`, and `projects/` are generated at runtime and excluded via `.gitignore`. Enabled plugins are declared in `settings.json` under `enabledPlugins`, which is the only plugin state worth version-controlling.
 
 ## Configuration
 

@@ -10,8 +10,6 @@
 !skills/**
 !hooks/
 !hooks/**
-!plugins/
-!plugins/installed_plugins.json
 
 # Whitelist root config files
 !CLAUDE.md
