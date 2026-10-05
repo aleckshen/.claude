@@ -67,11 +67,27 @@ skills such as `frontend-design` for UI work. Install with `/plugin` or
 
 ## Usage
 
-Clone this repo into `~/.claude` (or symlink it):
+`~/.claude` already exists on any machine where Claude Code has run, and git refuses to
+clone into a non-empty directory. So the repo is cloned alongside and its `.git` directory
+moved into place, then checked out over the existing files:
 
 ```sh
-git clone <repo-url> ~/.claude
+if [ -d "$HOME/.claude/.git" ]; then
+  echo "already cloned: $HOME/.claude"
+else
+  git clone https://github.com/aleckshen/.claude.git "$HOME/.claude.tmp"
+  mkdir -p "$HOME/.claude"
+  mv "$HOME/.claude.tmp/.git" "$HOME/.claude/"
+  rm -rf "$HOME/.claude.tmp"
+  git -C "$HOME/.claude" checkout -- .
+fi
 ```
+
+The whitelist `.gitignore` means the checkout leaves runtime state (`projects/`,
+`sessions/`, `cache/`, …) untouched, but it does overwrite tracked files with the
+committed versions — commit local tweaks before re-running it.
+
+My dotfiles bootstrap runs this automatically when setting up a new machine.
 
 Claude Code picks up `settings.json` and the directory structure automatically. Most
 changes (permissions, most hooks, `CLAUDE.md`) hot-reload, but **new LSP plugins and
