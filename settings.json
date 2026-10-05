@@ -5,12 +5,12 @@
     "DISABLE_TELEMETRY": "1",
     "CLAUDE_CODE_IDE_SKIP_AUTO_INSTALL": "1"
   },
-  "includeCoAuthoredBy": false,
   "attribution": {
     "commit": "",
     "pr": "",
     "sessionUrl": false
   },
+  "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
       "Read",
@@ -85,7 +85,7 @@
         "hooks": [
           {
             "type": "command",
-            "command": "cmd=$(jq -r '.tool_input.command // empty'); if printf '%s' \"$cmd\" | grep -qE '(^|[^a-zA-Z0-9_])\\.env([^a-zA-Z0-9_]|$)'; then echo '{\"hookSpecificOutput\":{\"hookEventName\":\"PreToolUse\",\"permissionDecision\":\"deny\",\"permissionDecisionReason\":\"Blocked: command references a .env file\"}}'; fi"
+            "command": "bash ~/.claude/hooks/deny-env.sh"
           }
         ]
       }
@@ -123,6 +123,11 @@
     "frontend-design@claude-plugins-official": true
   },
   "effortLevel": "high",
+  "modelSettings": {
+    "claude-sonnet-5": {
+      "effortLevel": "high"
+    }
+  },
   "autoUpdatesChannel": "latest",
   "tui": "fullscreen",
   "skipDangerousModePermissionPrompt": true,
